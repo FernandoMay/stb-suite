@@ -79,6 +79,10 @@ The three apps are separate deployables with separate contracts and product-spec
 - [Roadmap](docs/ROADMAP.md)
 - [Glossary](docs/GLOSSARY.md)
 
+## Latest release record
+
+The 9 Nov 2026 update for parallel Testnet reads and honest loading states is documented in [the release record](docs/releases/2026-11-09-parallel-testnet-reads.md). Build/test results and live screenshot checks are explicitly labeled as project-owner-reported; independent deployment/source verification remains pending.
+
 ## Current readiness snapshot
 
 This is a conservative snapshot based on the latest available project audit (8 Nov 2026), not a live RPC query:

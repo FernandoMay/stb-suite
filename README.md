@@ -79,6 +79,10 @@ The three apps are separate deployables with separate contracts and product-spec
 - [Roadmap](docs/ROADMAP.md)
 - [Glossary](docs/GLOSSARY.md)
 
+## Latest audit
+
+The 17 Nov 2026 source audit found a suite-wide unauthenticated initializer risk, plus unresolved TÓMBOLA randomness guarantees and BANDERA ROJA contract/scoring drift. See [the full audit](docs/audits/2026-11-17.md). No fresh Testnet or Netlify deployment verification was available in that run.
+
 ## Latest release record
 
 The 9 Nov 2026 update for parallel Testnet reads and honest loading states is documented in [the release record](docs/releases/2026-11-09-parallel-testnet-reads.md). Build/test results and live screenshot checks are explicitly labeled as project-owner-reported; independent deployment/source verification remains pending.

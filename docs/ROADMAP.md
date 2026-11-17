@@ -1,9 +1,10 @@
 # Roadmap
 
-Priorities below reflect the consolidated audit of 8 Nov 2026. Revalidate before treating them as current.
+Priorities below reflect the source review of 17 Nov 2026. Live Testnet state and Netlify deploys were not independently revalidated in that run.
 
 ## P0 — Contract correctness
 
+0. **ALL THREE:** require explicit authorization from the proposed admin during initialization (or use an equivalent constructor/deployment flow that proves authority); verify existing instance roles and make bootstrap race-free.
 1. **TÓMBOLA:** use the provider stored on each raffle for request and fulfillment; eliminate biased modulo fallback; test provider rotation and invalid/replayed proof paths.
 2. **BANDERA ROJA:** persist aggregate points/correct counts for every predictor on resolution; prove with multiple wallets and post-resolution reads.
 3. **¿SÍ O NEL?:** make resolver rotation safe for pending predictions; define and test migration/authorization semantics.

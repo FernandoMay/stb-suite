@@ -81,7 +81,7 @@ The three apps are separate deployables with separate contracts and product-spec
 
 ## Latest audit
 
-The 17 Nov 2026 source audit found a suite-wide unauthenticated initializer risk, plus unresolved TÓMBOLA randomness guarantees and BANDERA ROJA contract/scoring drift. See [the full audit](docs/audits/2026-11-17.md). No fresh Testnet or Netlify deployment verification was available in that run.
+The 18 Nov 2026 source audit found no functional commits since 9 Nov. The suite-wide unauthenticated initializer remains P0; TÓMBOLA still has a terminal biased modulo fallback and ignores the per-raffle provider snapshot; BANDERA ROJA still has a Testnet contract-ID mismatch and does not persist the scoring fields shown by its Ranking page. No fresh Testnet state, test execution, or Netlify dashboard deployment was independently verified. See [the full audit](docs/audits/2026-11-18.md).
 
 ## Latest release record
 
@@ -89,13 +89,13 @@ The 9 Nov 2026 update for parallel Testnet reads and honest loading states is do
 
 ## Current readiness snapshot
 
-This is a conservative snapshot based on the latest available project audit (8 Nov 2026), not a live RPC query:
+This is a conservative source snapshot from 18 Nov 2026, not a live RPC or deployment query. Tests are present in the repositories but were not run in this audit:
 
-| Game | Implemented | Tested | Testnet evidence | Outstanding critical work |
+| Game | IMPLEMENTED | TESTEADO | Testnet evidence | PENDIENTE |
 |---|---|---|---|---|
-| ¿SÍ O NEL? | Core prediction lifecycle documented | Local tests reported; rerun required | Deployment, initialization, and create flow recorded | Resolver rotation can strand pending predictions; full two-wallet lifecycle E2E |
-| TÓMBOLA | Raffle lifecycle and VRF integration documented | Local tests reported; rerun required | Request/fulfill E2E reported | Per-raffle provider snapshot handling; remove biased modulo fallback; independently revalidate oracle |
-| BANDERA ROJA | Polling, prediction, and result flow documented | Local tests reported; rerun required | Poll creation/result E2E reported | Persisted aggregate scoring/ranking; clarify voting vs prediction semantics |
+| ¿SÍ O NEL? | Prediction lifecycle and persisted per-wallet scoring | Rust/Vitest scripts and contract tests exist; not run in this audit | Historical initialize/create only; full lifecycle not independently rechecked | Unauthenticated initialize; resolver rotation; two-wallet E2E |
+| TÓMBOLA | Soroban VRF request/fulfill path; MockVrf is test-only | VRF/rejection tests exist; not run in this audit | 7 Nov E2E recorded by project; not independently rechecked | Unauthenticated initialize; terminal biased modulo fallback; global verifier instead of per-raffle snapshot; oracle/WASM proof revalidation |
+| BANDERA ROJA | Separate public on-chain votes and on-chain predictions; result derived from counts | Rust/Vitest tests exist; not run in this audit | Historical poll creation/result only; not independently rechecked | Unauthenticated initialize; wrong contract ID in Netlify/README; persistent correct/points scoring |
 
 **Do not interpret “Testnet evidence” as “all product flows independently verified.”** Detailed caveats and transaction links are in [TESTNET-EVIDENCE.md](docs/TESTNET-EVIDENCE.md).
 

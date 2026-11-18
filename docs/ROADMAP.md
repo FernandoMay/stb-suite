@@ -1,6 +1,6 @@
 # Roadmap
 
-Priorities below reflect the source review of 17 Nov 2026. Live Testnet state and Netlify deploys were not independently revalidated in that run.
+Priorities below reflect the source review of 18 Nov 2026. Live Testnet state and Netlify deploys were not independently revalidated in that run.
 
 ## P0 — Contract correctness
 
